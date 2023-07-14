@@ -1,0 +1,27 @@
+{% extends 'base_layout_admin.html' %}
+{% block body %}
+
+<div class="container-fluid h_heading">
+    <p class="h">EDIT VENUE</p>
+</div>
+
+<div class="container-fluid edit_form">
+    <form action="{{ url_for('edit_venue', venue_id=venue.venue_id) }}" method="POST">
+        <div class="mb-3">
+            <label class="form-label">NAME OF VENUE</label>
+            <input type="text" class="form-control" placeholder="Name of Venue" 
+                name="venue_name" value="{{ venue.venue_name }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PLACE</label>
+            <input type="text" class="form-control" placeholder="Place" name="place" value="{{ venue.place }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CAPACITY</label>
+            <input type="number" class="form-control" placeholder="Capacity" name="capacity" value="{{ venue.capacity }}">
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">SUBMIT</button>
+    </form>
+</div>
+
+{% endblock %}

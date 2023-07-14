@@ -1,0 +1,39 @@
+{% extends 'base_layout_admin.html' %}
+{% block body %}
+
+<div class="container-fluid h_heading">
+    <p class="h">ADD SHOW</p>
+</div>
+
+<div class="container-fluid edit_form">
+    <form action="{{ url_for('edit_show', show_id=show.show_id) }}" method="POST">
+        <div class="mb-3">
+            <label class="form-label">NAME OF SHOW</label>
+            <input type="text" class="form-control"  placeholder="Name of Show" name="show_name" value="{{ show.show_name }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">NAME OF VENUE</label>
+            <select type="text" class="form-control" placeholder="Name of Venue" name="venue_name">
+                <option value="{{ show.venue.venue_name }}">{{ show.venue.venue_name }}</option>
+                {% for venue in venues %}
+                    <option value="{{ venue.venue_name }}">{{ venue.venue_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TICKET PRICE</label>
+            <input type="number" class="form-control" placeholder="Ticket Price"  name="price" value="{{ show.price }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">DATE OF EVENT</label>
+            <input type="text" class="form-control" placeholder="Date"  name="date" value="{{ show.date }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TIME OF EVENT</label>
+            <input type="text" class="form-control" placeholder="Time"  name="time" value="{{ show.time }}">
+        </div>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </form>
+</div>
+
+{% endblock %}

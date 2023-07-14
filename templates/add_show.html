@@ -1,0 +1,44 @@
+{% extends 'base_layout_admin.html' %}
+{% block body %}
+
+<div class="container-fluid h_heading">
+    <p class="h">ADD SHOW</p>
+</div>
+
+
+<div class="container-fluid add_form">
+    <form action="{{ url_for('add_show') }}" method="POST">
+        <div class="mb-3">
+            <label class="form-label">NAME OF SHOW</label>
+            <input type="text" class="form-control"  placeholder="Name of Show" name="show_name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">NAME OF VENUE</label>
+            <select type="text" class="form-control" placeholder="Name of Venue" name="venue_name">
+                <option>Please select a venue</option>
+                {% for venue in venues %}
+                    <option value="{{ venue.venue_name }}">{{ venue.venue_name }}, {{ venue.place }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">RATING</label>
+            <input type="number" class="form-control"  placeholder="Rating out of 10"  name="rating">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TICKET PRICE</label>
+            <input type="number" class="form-control" placeholder="Ticket Price"  name="price">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">DATE OF EVENT</label>
+            <input type="date" class="form-control" placeholder="Date"  name="date">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TIME OF EVENT</label>
+            <input type="text" class="form-control" placeholder="Time"  name="time">
+        </div>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+
+<div class="container-fluid admin_heading">
+  <p class="h">Welcome!!! {{ name }}</p>
+</div>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ messages[0] }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="container-fluid ticket_info">
+  {% for ticket in tickets %}
+  {% if current_user.user_id == ticket.user_id %}
+  {% if ticket.show_id is none %}
+  <div class="card card-ticket">
+    <div class="row blur">
+      <div class="col-lg-6 card_left">
+        <div>
+          <h3 class="ticket-title">SHOW</h3>
+        </div>
+        <hr style="width:90%">
+        <div class="card-body pt-0">
+          <div class="name">
+            <p class="ticket-text  n1">{{ ticket.user.username }}</p>
+            <p class="ticket-text n2">name</p>
+          </div>
+          <div class="location">
+            <p class="ticket-text n2">location</p>
+          </div>
+          <div class="dt">
+            <p class="ticket-text n2">date and time</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 card_right">
+        <div class="no-ticket">
+          <p class="ticket-text n">{{ ticket.num_ticket }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="card card-ticket">
+    <div class="row">
+      <div class="col-lg-6 card_left">
+        <div>
+          <h3 class="ticket-title">{{ ticket.show.show_name }}</h3>
+        </div>
+        <hr style="width:90%">
+        <div class="card-body pt-0">
+          <div class="name">
+            <p class="ticket-text n1">{{ ticket.user.username }}</p>
+            <p class="ticket-text n2">name</p>
+          </div>
+          <div class="location">
+            <p class="ticket-text n1">{{ ticket.show.venue.venue_name }}, {{ ticket.show.venue.place }}</p>
+            <p class="ticket-text n2">location</p>
+          </div>
+          <div class="dt">
+            <p class="ticket-text n1">{{ ticket.show.date }}, {{ ticket.show.time }}</p>
+            <p class="ticket-text n2">date and time</p>
+          </div>
+          <div class="cancel">
+            <a href="{{ url_for('cancel_ticket', ticket_id=ticket.ticket_id) }}" class="btn btn-primary">CANCEL
+              TICKETS</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 card_right">
+        <div class="no-ticket">
+          <p class="ticket-text n">{{ ticket.num_ticket }} </p>
+          <p class="n3">tickets</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+</div>
+
+</div>
+
+
+{% endblock %}

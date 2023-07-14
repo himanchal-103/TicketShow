@@ -1,0 +1,41 @@
+{% extends 'base_layout.html' %}
+{% block body %}
+
+<div class="container-fluid admin_heading">
+    <p class="h">TICKET BOOKING WINDOW</p>
+</div>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-warning alert-dismissible fade show mt-0" role="alert">
+    {{ messages[0] }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="container-fluid add_form">
+    <form action="{{ url_for('book_ticket', show_id=show.show_id) }}" method="POST">
+        <fieldset disabled>
+            <div class="mb-3">
+                <label class="form-label">NAME</label>
+                <input type="text" class="form-control" name="username" value="{{ name }}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">NAME OF SHOW</label>
+                <input type="text" class="form-control" name="show_name" value="{{ show.show_name }}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">VENUE</label>
+                <input type="text" class="form-control" name="venue" value="{{ show.venue.venue_name }}, {{ show.venue.place }}">
+            </div>
+        </fieldset>
+        <div class="mb-3">
+            <label class="form-label">NUMBER OF TICKETS</label>
+            <input type="number" class="form-control" placeholder="Number Of Tickets" name="num_ticket">
+        </div>
+        <button type="submit" class="btn btn-primary">BOOK TICKETS</button>
+    </form>
+</div>
+
+{% endblock %}

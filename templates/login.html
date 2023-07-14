@@ -1,0 +1,43 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+
+<div class="container-fluid login_form">
+    <div class="row">
+        <div class="col-lg-6">
+            <img class="login_image" src="{{ url_for('static', filename='images/login.jpg') }}" alt="">
+        </div>
+        <div class="login_fields col-lg-6">
+            <div class="form_element">
+                <h1 style="font-size: 3rem;">Log In</h1>
+            </div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div>
+                    <div class="alert alert-danger" role="alert">
+                        {{ messages[0] }} Go to <a href="{{ url_for('login') }}">Login page</a>.
+                    </div>
+                </div>
+            {% endif %}
+            {% endwith %}
+            <form action="/login" method="POST">
+                <div class="form_element">
+                    <p class="login_text">USERNAME</p>
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="form_element">
+                    <p class="login_text">PASSWORD</p>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div class="d-grid gap-2" style="padding-bottom: 3%;">
+                    <button class="btn btn-primary"  type="submit">Log In</button>
+                </div>
+            </form>
+            <div>
+                <p class="abc_login">Not a member?<a href="{{ url_for('signup') }}">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

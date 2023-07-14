@@ -1,0 +1,223 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navbar */
+.title-nav {
+    padding-left: 2%;
+    padding-right: 2%;
+    background: black;
+    margin-bottom: 0;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* Footer section */
+#footer {
+    text-align: center;
+    padding-top: 1%;
+}
+
+.social-icons {
+    padding: 20px;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* title section */
+#title {
+    background: black;
+    margin-bottom: 0;
+}
+
+.page-header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top -9rem;
+    color: rgb(237, 220, 220);
+    margin-bottom: 3%;
+}
+
+
+/* heading */
+.masthead {
+    padding-left: 2%;
+}
+
+.header {
+    padding: 10% 3% 25% 3%;
+    text-align: center;
+}
+
+.heading {
+    font-size: 5rem;
+}
+
+
+.shadow {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.853);
+    padding-left: 2px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* profile page */
+.ticket_info {
+    padding: 3% 10% 3% 10%;
+}
+
+.card-ticket {
+    padding-bottom: 25px;
+    border: 0;
+}
+
+.card_left {
+    padding-left: 25px;
+    /* background-color:#ecedef; */
+    background-color: #dedddd;
+    color: black;
+    width: 65%;
+}
+
+
+.card_right {
+    background-color: #e84c3d;
+    color: #ecedef;
+    width: 35%;
+}
+
+.ticket-title {
+    font-size: 1.8rem;
+    padding-top: 8px;
+    padding-left: 1%;
+    text-transform: uppercase;
+}
+
+.ticket-text {
+    margin: 0;
+}
+
+.location {
+    padding-top: 2%;
+}
+
+.dt {
+    padding-top: 2%;
+}
+
+.cancel {
+    padding-top: 2%;
+}
+
+.n1 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.n2 {
+    color: rgb(110, 110, 110);
+}
+
+.no-ticket {
+    text-align: center;
+}
+
+.n {
+    font-size: 10rem;
+}
+
+.n3 {
+    font-size: 2rem;
+    position: absolute;
+    right: 13%;
+    bottom: 26%;
+}
+
+.blur {
+    filter: blur(2px);
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* Login page */
+.login_form {
+    padding: 4%;
+}
+
+.login_fields {
+    padding-top: 3%;
+    padding-left: 10%;
+}
+
+.login_image {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login_text {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.form_element {
+    padding-bottom: 5%;
+}
+
+.abc_login {
+    padding-top: 5%;
+    text-align: center;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* Sign In page */
+.signin_form {
+    padding: 4%;
+    padding-bottom: 2%;
+}
+
+.signin_fields {
+    padding-left: 10%;
+}
+
+.signin_text {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.abc_signin {
+    padding-top: 5%;
+    text-align: center;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* Admin Page */
+.h_heading {
+    background-color: rgba(74, 76, 78, 0.753);
+}
+
+.h {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2.8rem;
+    color: white;
+}
+
+/* add_veune button, add_show button */
+.control {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+
+/* add_venue, add_show, edit_venue, edit_show */
+.add_form,
+.edit_form {
+    padding: 5% 15% 6% 15%;
+}

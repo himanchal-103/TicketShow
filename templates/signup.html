@@ -1,0 +1,47 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+
+<div class="container-fluid signin_form">
+    <div class="row">
+        <div class="col-lg-6" style="padding-top: 1.5%;">
+            <img class="signin_image" src="{{ url_for('static', filename='images/signup.jpg') }}" alt="">
+        </div>
+        <div class="signin_fields col-lg-6">
+            <div class="form_element">
+                <h1 style="font-size: 3rem;">Sign Up</h1>
+            </div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div>
+                    <div class="alert alert-danger" role="alert">
+                        {{ messages[0] }} Go to <a href="{{ url_for('login') }}">Login page</a>.
+                    </div>
+                </div>
+            {% endif %}
+            {% endwith %}
+            <form action="/signup" method="POST">
+                <div class="form_element">
+                    <p class="signin_text">USERNAME</p>
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="form_element">
+                    <p class="signin_text">EMAIL</p>
+                    <input type="text" class="form-control" name="email" placeholder="Email">
+                </div>
+                <div class="form_element">
+                    <p class="signin_text">PASSWORD</p>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div class="d-grid gap-2" style="padding-bottom: 3%;">
+                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                </div>
+            </form>
+            <div>
+                <p class="abc_signin">Already a member?<a href="{{ url_for('login') }}">Log In</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
