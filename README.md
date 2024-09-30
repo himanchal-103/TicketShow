@@ -1,8 +1,6 @@
 # TicketShow
 TicketShow is a web-based application that enables administrators to manage venues, shows, and users while allowing users to book multiple tickets for multiple shows simultaneously. The application is built using Flask and SQLAlchemy for the backend and includes validation using Flask-Validations.
 
-This work is deployed on render. (link: https://ticketshow-4uvh.onrender.com)
-
 # Features
 1. Admin Management: Administrators can add, edit, and delete venues, shows, and users.
 2. Venue Management: Admins can manage venues by adding, editing, and deleting venue details.
