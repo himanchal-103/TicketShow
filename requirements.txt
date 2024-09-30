@@ -2,3 +2,4 @@ Flask
 Flask_Login
 flask_sqlalchemy
 WTForms
+Gunicorn
